@@ -1,4 +1,4 @@
-package com.fa.eurekaclient1;
+package com.fa.eurekaclient2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-public class EurekaClient1Application {
+public class EurekaClient2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClient1Application.class, args);
+        SpringApplication.run(EurekaClient2Application.class, args);
     }
 
     @Value("${server.port}")
-    String prot;
+    String port;
 
     @RequestMapping("/hi")
     public String hi(){
-        return "IP:"+prot+"    Eureka-client1";
+        return "IP:"+port+"   Eureka-client2";
     }
 }
