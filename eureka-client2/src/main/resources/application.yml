@@ -1,9 +1,9 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka/  # 册中心地址
+      defaultZone: http://localhost:9001/eureka/
 server:
-  port: 9003  # 端口
+  port: 9003
 spring:
   application:
-    name: service-hi  # 服务名
+    name: service-hi
