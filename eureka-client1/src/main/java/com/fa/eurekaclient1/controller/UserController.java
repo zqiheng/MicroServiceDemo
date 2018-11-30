@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 
 /**
  * description:
@@ -42,7 +43,8 @@ public class UserController {
     /**
      * API接口：添加用户信息
      * @param user　用户信息
-     * @return
+     * @return 1：添加成功、0：添加失败
+     * 请求地址：/user/saveUser
      */
     @PostMapping("/saveUser")
     public Object insertUserInfo(User user){
@@ -61,6 +63,18 @@ public class UserController {
             }
         }
         return 0;
+    }
+
+    /**
+     * 批量删除用户信息
+     * @param id id数组
+     * @return
+     */
+    @PostMapping(value = "/deleteUserInfoById")
+    public Object deleteUserInfo(int[] id){
+        System.out.println("删除的id：" + Arrays.toString(id));
+        userService.deleteUserInfo(id);
+        return 1;
     }
 
 }

@@ -46,4 +46,15 @@ public class UserServiceImpl implements UserService {
     public User insertUserInfo(User user) {
         return userDao.save(user);
     }
+
+    /**
+     * 根据用户Id信息删除用户，批量删除
+     * @param id id数组
+     */
+    @Override
+    public void deleteUserInfo(int[] id) {
+        for(int i:id){
+            userDao.deleteById(i);
+        }
+    }
 }

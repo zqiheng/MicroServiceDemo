@@ -22,4 +22,6 @@ public interface UserService {
     List<User> getAllUserList();
 
     User insertUserInfo(User user);
+
+    void deleteUserInfo(int[] id);
 }
