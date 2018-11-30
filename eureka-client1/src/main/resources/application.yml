@@ -1,9 +1,30 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka/    #注册中心地址
+      defaultZone: http://localhost:9001/eureka/
+
+
 server:
-  port: 9002     #端口号
+  port: 9002
+
+
 spring:
   application:
-    name: service-hi   #配置服务名，Eureka是用服务名作为唯一的标识
+    name: service-hi
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/fa_microservicedemo?useUnicode=true&characterEncoding=utf-8&useSSL=true&allowMultiQueries=true&serverTimezone=GMT
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+
