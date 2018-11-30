@@ -2,13 +2,14 @@ package com.fa.eurekaclient1.controller;
 
 import com.fa.eurekaclient1.po.User;
 import com.fa.eurekaclient1.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
+import java.util.List;
 
 /**
  * description:
@@ -23,6 +24,7 @@ import java.util.Arrays;
  * @date: 2018/11/30 14:11
  * @copyright: 2018, FA Software (Shanghai) Co., Ltd. All Rights Reserved.
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -37,7 +39,9 @@ public class UserController {
      */
     @GetMapping("/getAllUserList")
     public Object getAllUserList(){
-        return userService.getAllUserList();
+        List<User> list = userService.getAllUserList();
+        log.info("UserController-info:"+list);
+        return list;
     }
 
     /**
@@ -48,7 +52,7 @@ public class UserController {
      */
     @PostMapping("/saveUser")
     public Object insertUserInfo(User user){
-        System.out.println(user);
+        log.info("UserController-info提交的参数："+user);
         int flag = 0;
 
         if(null != user.getName() && !user.getName().equals("")
@@ -57,7 +61,7 @@ public class UserController {
                 && null != user.getSex() && !user.getSex().equals("")){
             // 保存用户
             User savedUser = userService.insertUserInfo(user);
-            System.out.println(savedUser.getId());
+            log.info("UserController-info新增用户信息返回的ID："+savedUser.getId());
             if(savedUser.getId() > 0){
                 return 1;
             }
@@ -72,7 +76,7 @@ public class UserController {
      */
     @PostMapping(value = "/deleteUserInfoById")
     public Object deleteUserInfo(int[] id){
-        System.out.println("删除的id：" + Arrays.toString(id));
+        log.info("UserController-info删除的Id数据："+id);
         userService.deleteUserInfo(id);
         return 1;
     }

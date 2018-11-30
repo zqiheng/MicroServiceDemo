@@ -27,4 +27,10 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
 
 
+logging:
+  level:
+    root: info
+
+
+
 
