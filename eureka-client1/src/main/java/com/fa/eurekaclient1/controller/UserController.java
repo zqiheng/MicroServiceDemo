@@ -53,8 +53,6 @@ public class UserController {
     @PostMapping("/saveUser")
     public Object insertUserInfo(User user){
         log.info("UserController-info提交的参数："+user);
-        int flag = 0;
-
         if(null != user.getName() && !user.getName().equals("")
                 && null != user.getAccount() && !user.getAccount().equals("")
                 && null != user.getPassword() && !user.getPassword().equals("")
@@ -70,15 +68,20 @@ public class UserController {
     }
 
     /**
-     * 批量删除用户信息
+     * API接口：批量删除用户信息
      * @param id id数组
-     * @return
+     * @return 1：删除成功、0：表示没有删除的对象
      */
     @PostMapping(value = "/deleteUserInfoById")
     public Object deleteUserInfo(int[] id){
         log.info("UserController-info删除的Id数据："+id);
-        userService.deleteUserInfo(id);
-        return 1;
+        if(id.length > 0){
+            // 删除用户
+            userService.deleteUserInfo(id);
+            return 1;
+        }else{
+            return 0;
+        }
     }
 
 }
