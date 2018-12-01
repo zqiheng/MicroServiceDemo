@@ -1,4 +1,4 @@
-package com.fa.eurekaclient2;
+package com.fa.service_user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EurekaClient2ApplicationTests {
+public class ServiceUserApplicationTests {
 
     @Test
     public void contextLoads() {

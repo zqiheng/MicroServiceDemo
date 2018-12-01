@@ -1,8 +1,8 @@
-package com.fa.eurekaclient1.service.impl;
+package com.fa.service_user.service.impl;
 
-import com.fa.eurekaclient1.dao.UserDao;
-import com.fa.eurekaclient1.po.User;
-import com.fa.eurekaclient1.service.UserService;
+import com.fa.service_user.dao.UserDao;
+import com.fa.service_user.po.User;
+import com.fa.service_user.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

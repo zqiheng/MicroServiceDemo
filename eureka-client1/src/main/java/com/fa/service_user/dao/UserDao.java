@@ -1,8 +1,7 @@
-package com.fa.eurekaclient1.dao;
+package com.fa.service_user.dao;
 
-import com.fa.eurekaclient1.po.User;
+import com.fa.service_user.po.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 /**
  * description: 用户实体数据持久操作层。

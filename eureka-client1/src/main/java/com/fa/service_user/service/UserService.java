@@ -1,6 +1,6 @@
-package com.fa.eurekaclient1.service;
+package com.fa.service_user.service;
 
-import com.fa.eurekaclient1.po.User;
+import com.fa.service_user.po.User;
 
 import java.util.List;
 

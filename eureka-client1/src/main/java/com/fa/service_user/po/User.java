@@ -1,4 +1,4 @@
-package com.fa.eurekaclient1.po;
+package com.fa.service_user.po;
 
 import javax.persistence.*;
 

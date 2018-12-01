@@ -1,7 +1,7 @@
-package com.fa.eurekaclient1.controller;
+package com.fa.service_user.controller;
 
-import com.fa.eurekaclient1.po.User;
-import com.fa.eurekaclient1.service.UserService;
+import com.fa.service_user.po.User;
+import com.fa.service_user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
